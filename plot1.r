@@ -8,7 +8,7 @@ yearsList <- list(NEI$year)
 #Aggregates the data read above to Sum Emissions by Year
 totalEmissions <- aggregate(NEI$Emissions, by = yearsList, FUN = sum)
 
-#Plots barplot and save file
+#Plots barplot and saves file
 png(filename = "plot1.png")
 barplot(totalEmissions$x, names.arg = totalEmissions$Group.1,
         xlab="Years", ylab= "PM 2.5 Emmissions (Ton)", main="Total PM 2.5 Emmisions")

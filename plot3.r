@@ -8,7 +8,7 @@ NEI <- readRDS("summarySCC_PM25.rds")
 #Subsets for Baltimmore
 charmCity <- subset(NEI, NEI$fips == 24510)
 
-#Gets a list of years
+#Sets year into a factor and sums emissions by year and type
 charmCity <-transform(NEI,year=factor(year))
 charmCity <-ddply(charmCity,.(year,type),summarize,sum=sum(Emissions))
 
